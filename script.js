@@ -33,6 +33,34 @@ class GameView {
 }
 
 
+class Entity { 
+    constructor(x, y, height, width){
+    this.x = x;
+    this.y = y;
+    this.height = height;
+    this.width = width; 
+    }
+
+    boundingBox(){ 
+    return {
+    left : this.x,
+    right : this.x + this.width,
+    top : this.y,
+    bottom : this.y + height
+    } 
+    } 
+
+    draw(ctx){
+    ctx.fillStyle = "white";
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+    } 
+} 
+
+
+
+
+
+
 
 
     
