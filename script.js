@@ -68,6 +68,39 @@ class Paddle extends Entity{
 }
 
 
+class Ball extends Entity{
+    static SIZE = 5; 
+
+    constructor(){ 
+    super(0, 0, Ball.SIZE, Ball.SIZE);
+    init();
+    }
+
+    init(){
+    Ball.x = 20;
+    Ball.y = 30; 
+    Ball.xSpeed = 2;
+    Ball.ySpeed = 4; 
+    } 
+
+    update(){
+    Ball.x += Ball.xSpeed;
+    Ball.y += Ball.ySpeed; 
+    } 
+
+    adjustAngle(distanceFromTop, distanceFromBottom){
+    if(distanceFromTop < 0){
+    //If ball hit near top of paddle, reduce ySpeed
+        Ball.y -= 0.5;
+    }else if(distanceFromBottom < 0 ){
+    //If ball hit near bottom of paddle, increase ySpeed
+        Ball.y += 0.5 ;
+    }
+    } 
+
+    
+
+
 
 
 
